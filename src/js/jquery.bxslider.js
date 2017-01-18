@@ -1426,6 +1426,7 @@
           value = slider.settings.mode === 'horizontal' ? -(position.left - moveBy) : -position.top;
           // plugin values to be animated
           setPositionProperty(value, 'slide', slider.settings.speed);
+          slider.working = false;
         } else {
           slider.working = false;
         }
