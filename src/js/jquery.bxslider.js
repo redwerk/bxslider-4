@@ -1088,7 +1088,9 @@
      * @param e (event)
      *  - DOM event object
      */
+    window.ja_touchLocked = false; // Customised by Maksim Parfeniuk. Related to https://bugzilla.redwerk.com/show_bug.cgi?id=23402
     var onTouchStart = function(e) {
+      if(window.ja_touchLocked) { return false; } // Customised by Maksim Parfeniuk. Related to https://bugzilla.redwerk.com/show_bug.cgi?id=23402
       //disable slider controls while user is interacting with slides to avoid slider freeze that happens on touch devices when a slide swipe happens immediately after interacting with slider controls
       slider.controls.el.addClass('disabled');
 
