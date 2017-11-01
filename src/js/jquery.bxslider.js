@@ -1219,7 +1219,7 @@
           setPositionProperty(value, 'reset', 200);
         } else {
           // check if distance clears threshold
-          if (Math.abs(distance) >= slider.settings.swipeThreshold) {
+          if (Math.abs(distance) >= slider.settings.swipeThreshold && !window.ja_touchLocked) { // Customised by Sergey Yuhimovich. Related to https://jira.redwerk.com/browse/JA-383
             if (distance < 0) {
               el.goToNextSlide();
             } else {
